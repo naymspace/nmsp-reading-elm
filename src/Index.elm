@@ -37,6 +37,7 @@ view posts =
                             Nothing
                 )
             |> List.sortBy (Tuple.second >> .published >> Date.toRataDie)
+            |> List.reverse
             |> List.map postSummary
         )
 
