@@ -77,12 +77,14 @@ allPages : List (PagePath PathKey)
 allPages =
     [ (buildPage [  ])
     , (buildPage [ "reading-dez-19" ])
+    , (buildPage [ "reading-feb-20" ])
     , (buildPage [ "reading-nov-19" ])
     ]
 
 pages =
     { index = (buildPage [  ])
     , readingDez19 = (buildPage [ "reading-dez-19" ])
+    , readingFeb20 = (buildPage [ "reading-feb-20" ])
     , readingNov19 = (buildPage [ "reading-nov-19" ])
     , directory = directoryWithIndex []
     }
@@ -154,6 +156,12 @@ content =
   ,
   ( ["reading-dez-19"]
     , { frontMatter = """{"type":"blog","author":"Tomke Reibisch","title":"December 2019","description":"Fun fact: December in the Northern Hemisphere is similar to June in the Southern Hemisphere.","image":"/images/article-covers/steinar-england-1.jpg","published":"2019-12-17"}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
+  ( ["reading-feb-20"]
+    , { frontMatter = """{"type":"blog","author":"Tomke Reibisch","title":"Februar 2020","description":"Fun fact: There are not many Fun Facts about months...","image":"/images/article-covers/mike-kotsch-2.jpg","published":"2020-02-07"}
 """ , body = Nothing
     , extension = "md"
     } )
