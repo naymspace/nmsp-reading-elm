@@ -36,6 +36,7 @@ view posts =
                         Metadata.BlogIndex ->
                             Nothing
                 )
+            |> List.sortBy (Tuple.second >> .published >> Date.toRataDie)
             |> List.map postSummary
         )
 
