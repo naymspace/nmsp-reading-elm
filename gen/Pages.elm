@@ -75,14 +75,16 @@ application config =
 
 allPages : List (PagePath PathKey)
 allPages =
-    [ (buildPage [  ])
+    [ (buildPage [ "bitkom-seo-webinar" ])
+    , (buildPage [  ])
     , (buildPage [ "reading-dez-19" ])
     , (buildPage [ "reading-feb-20" ])
     , (buildPage [ "reading-nov-19" ])
     ]
 
 pages =
-    { index = (buildPage [  ])
+    { bitkomSeoWebinar = (buildPage [ "bitkom-seo-webinar" ])
+    , index = (buildPage [  ])
     , readingDez19 = (buildPage [ "reading-dez-19" ])
     , readingFeb20 = (buildPage [ "reading-feb-20" ])
     , readingNov19 = (buildPage [ "reading-nov-19" ])
@@ -99,7 +101,8 @@ images =
         , directory = directoryWithoutIndex ["articleCovers"]
         }
     , author =
-        { tomke = (buildImage [ "author", "tomke.jpg" ])
+        { sina = (buildImage [ "author", "sina.png" ])
+        , tomke = (buildImage [ "author", "tomke.jpg" ])
         , directory = directoryWithoutIndex ["author"]
         }
     , elmLogo = (buildImage [ "elm-logo.svg" ])
@@ -116,6 +119,7 @@ allImages =
     , (buildImage [ "article-covers", "mike-kotsch-2.jpg" ])
     , (buildImage [ "article-covers", "mountains.jpg" ])
     , (buildImage [ "article-covers", "steinar-england-1.jpg" ])
+    , (buildImage [ "author", "sina.png" ])
     , (buildImage [ "author", "tomke.jpg" ])
     , (buildImage [ "elm-logo.svg" ])
     , (buildImage [ "github.svg" ])
@@ -148,6 +152,12 @@ isValidRoute route =
 content : List ( List String, { extension: String, frontMatter : String, body : Maybe String } )
 content =
     [ 
+  ( ["bitkom-seo-webinar"]
+    , { frontMatter = """{"type":"blog","author":"Sina Solveig Söhren","title":"SEO-Webinar","description":"TEST BITKOM AKADEMIE UND SEO-TRENDS 2020","image":"/images/article-covers/mike-kotsch-2.jpg","published":"2020-02-07","draft":true}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
   ( []
     , { frontMatter = """{"title":"nmsp reading","type":"blog-index"}
 """ , body = Nothing
