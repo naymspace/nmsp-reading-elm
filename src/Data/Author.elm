@@ -21,6 +21,10 @@ all =
       , avatar = Pages.images.author.tomke
       , bio = "Person that started this"
       }
+    , { name = "Sina Solveig Söhren"
+      , avatar = Pages.images.author.sina
+      , bio = "Digitale Strategie + Konzept + Business Development"
+      }
     ]
 
 
